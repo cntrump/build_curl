@@ -35,7 +35,7 @@ Protocols: dict file ftp ftps gopher http https imap imaps ldap mqtt pop3 pop3s 
 Features: AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL UnixSockets
 ```
 
-Test HTTP/1.1
+Test `HTTP/1.1`:
 
 ```
 curl/build/src/curl --http1.1 -I https://quic.aiortc.org/
@@ -51,7 +51,7 @@ Connection: keep-alive
 Alt-Svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 ```
 
-Test HTTP/2
+Test `HTTP/2`:
 
 ```
 curl/build/src/curl --http2 -I https://quic.aiortc.org/
@@ -66,7 +66,7 @@ content-length: 978
 alt-svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 ```
 
-Test HTTP/3
+Test `HTTP/3`:
 
 ```
 curl/build/src/curl --http3 -I https://quic.aiortc.org/
@@ -78,6 +78,47 @@ server: aioquic/0.9.7
 date: Tue, 01 Dec 2020 07:23:33 GMT
 content-length: 1068
 content-type: text/html; charset=utf-8
+```
+
+Upgrade via `Alt-Svc`:
+
+```
+curl/build/src/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
+```
+
+```
+* Alt-svc connecting from [h2]quic.aiortc.org:443 to [h3-29]quic.aiortc.org:443
+*   Trying 34.247.69.99:443...
+* Sent QUIC client Initial, ALPN: h3-29,h3-28,h3-27
+* Connected to quic.aiortc.org (34.247.69.99) port 443 (#0)
+* h3 [:method: HEAD]
+* h3 [:path: /]
+* h3 [:scheme: https]
+* h3 [:authority: quic.aiortc.org]
+* h3 [user-agent: curl/7.73.0-DEV]
+* h3 [accept: */*]
+* h3 [alt-used: quic.aiortc.org:443]
+* Using HTTP/3 Stream ID: 0 (easy handle 0x7fba6d815600)
+> HEAD / HTTP/3
+> Host: quic.aiortc.org
+> user-agent: curl/7.73.0-DEV
+> accept: */*
+> alt-used: quic.aiortc.org:443
+> 
+< HTTP/3 200
+HTTP/3 200
+< server: aioquic/0.9.7
+server: aioquic/0.9.7
+< date: Tue, 01 Dec 2020 09:18:06 GMT
+date: Tue, 01 Dec 2020 09:18:06 GMT
+< content-length: 1068
+content-length: 1068
+< content-type: text/html; charset=utf-8
+content-type: text/html; charset=utf-8
+
+< 
+* Excess found: excess = 1068 url = / (zero-length body)
+* Connection #0 to host quic.aiortc.org left intact
 ```
 
 More HTTP/3 test servers: 

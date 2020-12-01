@@ -23,6 +23,7 @@ cmake -DCMAKE_USE_OPENSSL=YES \
       -DUSE_QUICHE=YES \
       -DQUICHE_INCLUDE_DIR=../../quiche/include \
       -DQUICHE_LIBRARY=../../quiche/target/release/libquiche.a \
+      -DENABLE_ALT_SVC=YES \
       -DBUILD_SHARED_LIBS=NO \
       -G Ninja ..
 
