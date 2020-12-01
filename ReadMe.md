@@ -4,10 +4,16 @@
 - [x] HTTP/2 (using [nghttp2](https://github.com/nghttp2/nghttp2))
 - [x] HTTP/3 (using [quiche](https://github.com/cloudflare/quiche))
 
-Install rust (for building quiche)
+Install `rust` (for building quiche using cargo)
 
 ```
 brew install rust
+```
+
+Install `cmake`, `ninja` for building sources
+
+```
+brew install cmake ninja
 ```
 
 ## Building
