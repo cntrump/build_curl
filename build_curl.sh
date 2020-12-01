@@ -19,11 +19,6 @@ cmake -DCMAKE_USE_OPENSSL=YES \
       -DUSE_NGHTTP2=YES \
       -DNGHTTP2_INCLUDE_DIR=../../nghttp2/libnghttp2/include \
       -DNGHTTP2_LIBRARY=../../nghttp2/libnghttp2/lib/libnghttp2.a \
-      -DUSE_NGTCP2=YES \
-      -DNGTCP2_INCLUDE_DIR=../../ngtcp2/libngtcp2/include \
-      -DNGTCP2_LIBRARY=../../ngtcp2/libngtcp2/lib/libngtcp2.a \
-      -DLIBNGHTTP3_INCLUDE_DIR=../../nghttp3/libnghttp3/include \
-      -DLIBNGHTTP3_LIBRARY=../../nghttp3/libnghttp3/lib/libnghttp3.a \
       -DBUILD_SHARED_LIBS=NO \
       -G Ninja ..
 
