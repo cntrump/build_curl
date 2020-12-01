@@ -13,7 +13,8 @@ fi
 mkdir build && cd build
 
 cmake -DCMAKE_BUILD_TYPE=Release \
-      -DBUILD_SHARED_LIBS=0 \
+      -DBUILD_SHARED_LIBS=NO \
+      -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
       -G Ninja  ..
 
 ninja && cd ..

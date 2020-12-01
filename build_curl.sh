@@ -22,9 +22,10 @@ cmake -DCMAKE_USE_OPENSSL=YES \
       -DNGHTTP2_LIBRARY=../../nghttp2/libnghttp2/lib/libnghttp2.a \
       -DUSE_QUICHE=YES \
       -DQUICHE_INCLUDE_DIR=../../quiche/include \
-      -DQUICHE_LIBRARY=../../quiche/target/release/libquiche.a \
+      -DQUICHE_LIBRARY=../../quiche/target/x86_64-apple-darwin/release/libquiche.a \
       -DENABLE_ALT_SVC=YES \
       -DBUILD_SHARED_LIBS=NO \
+      -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
       -G Ninja ..
 
 ninja && cd ..

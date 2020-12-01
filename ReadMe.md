@@ -32,7 +32,7 @@ output
 curl 7.73.0-DEV (Darwin) libcurl/7.73.0-DEV BoringSSL zlib/1.2.11 libssh2/1.9.0 nghttp2/1.42.0 quiche/0.6.0
 Release-Date: [unreleased]
 Protocols: dict file ftp ftps gopher http https imap imaps ldap mqtt pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp 
-Features: AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL UnixSockets
+Features: alt-svc AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL UnixSockets
 ```
 
 Test `HTTP/1.1`:

@@ -8,6 +8,11 @@ fi
 
 cd quiche
 
-cargo build --release --features pkg-config-meta,qlog
+if [ -d target ];then
+  cargo clean
+fi
+
+MACOSX_DEPLOYMENT_TARGET=10.9 \
+cargo build --target=x86_64-apple-darwin --release --features pkg-config-meta,qlog --verbose
 
 cd ..
