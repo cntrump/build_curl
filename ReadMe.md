@@ -35,3 +35,51 @@ Protocols: dict file ftp ftps gopher http https imap imaps ldap mqtt pop3 pop3s 
 Features: AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL UnixSockets
 ```
 
+Test HTTP/1.1
+
+```
+curl/build/src/curl --http1.1 -I https://quic.aiortc.org/
+```
+
+```
+HTTP/1.1 200 OK
+Server: nginx/1.14.2
+Date: Tue, 01 Dec 2020 07:22:46 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 978
+Connection: keep-alive
+Alt-Svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
+```
+
+Test HTTP/2
+
+```
+curl/build/src/curl --http2 -I https://quic.aiortc.org/
+```
+
+```
+HTTP/2 200 
+server: nginx/1.14.2
+date: Tue, 01 Dec 2020 07:23:11 GMT
+content-type: text/html; charset=utf-8
+content-length: 978
+alt-svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
+```
+
+Test HTTP/3
+
+```
+curl/build/src/curl --http3 -I https://quic.aiortc.org/
+```
+
+```
+HTTP/3 200
+server: aioquic/0.9.7
+date: Tue, 01 Dec 2020 07:23:33 GMT
+content-length: 1068
+content-type: text/html; charset=utf-8
+```
+
+More HTTP/3 test servers: 
+
+https://bagder.github.io/HTTP3-test/
