@@ -2,6 +2,9 @@
 
 set -e
 
+export CC=clang
+export CXX=clang++
+
 ./build_zlib.sh
 ./build_boringssl.sh
 ./build_nghttp2.sh

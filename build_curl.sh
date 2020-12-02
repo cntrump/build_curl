@@ -26,6 +26,9 @@ cmake -DCMAKE_USE_OPENSSL=YES \
       -DCURL_ZLIB=YES \
       -DZLIB_INCLUDE_DIR="${PWD}/../../zlib/libz/include" \
       -DZLIB_LIBRARY="${PWD}/../../zlib/libz/lib/libz.a" \
+      -DCURL_ZSTD=YES \
+      -DZstd_INCLUDE_DIR="${PWD}/../../zstd/libzstd/include" \
+      -DZstd_LIBRARY="${PWD}/../../zstd/libzstd/lib/libzstd.a" \
       -DENABLE_ALT_SVC=YES \
       -DBUILD_SHARED_LIBS=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
