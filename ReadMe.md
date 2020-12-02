@@ -1,4 +1,4 @@
-# Build cUrl for macOS
+# Build cUrl for macOS [![Build Status](https://travis-ci.com/cntrump/build_curl.svg?branch=main)](https://travis-ci.com/cntrump/build_curl)
 
 - [x] HTTPS  (using [boringSSL](https://github.com/google/boringssl))
 - [x] HTTP/2 (using [nghttp2](https://github.com/nghttp2/nghttp2))
