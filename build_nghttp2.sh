@@ -23,9 +23,15 @@ if [ -d libnghttp2 ];then
   rm -rf libnghttp2
 fi
 
-mkdir libnghttp2 && mkdir -p libnghttp2/include/nghttp2 && mkdir libnghttp2/lib
+mkdir libnghttp2 && cd libnghttp2
 
-cp build/lib/libnghttp2.a libnghttp2/lib/
+mkdir -p include/nghttp2 && mkdir lib
 
-cp build/lib/includes/nghttp2/nghttp2ver.h libnghttp2/include/nghttp2
-cp lib/includes/nghttp2/nghttp2.h libnghttp2/include/nghttp2
+cd lib
+ln -s ../../build/lib/libnghttp2.a libnghttp2.a
+cd ..
+
+cd include/nghttp2
+ln -s ../../../build/lib/includes/nghttp2/nghttp2ver.h nghttp2ver.h
+ln -s ../../../lib/includes/nghttp2/nghttp2.h nghttp2.h
+cd ../..
