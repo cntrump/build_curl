@@ -29,8 +29,8 @@ curl/build/src/curl -V
 output
 
 ```
-curl 7.73.0-DEV (Darwin) libcurl/7.73.0-DEV BoringSSL zlib/1.2.11 zstd/1.4.5 libssh2/1.9.0 nghttp2/1.42.0 quiche/0.6.0
-Release-Date: [unreleased]
+curl 7.73.0 (Darwin) libcurl/7.73.0 BoringSSL zlib/1.2.11 zstd/1.4.5 libssh2/1.9.0 nghttp2/1.42.0 quiche/0.6.0
+Release-Date: 2020-12-02
 Protocols: dict file ftp ftps gopher http https imap imaps ldap mqtt pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp 
 Features: alt-svc AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL UnixSockets zstd
 ```
@@ -95,13 +95,13 @@ curl/build/src/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
 * h3 [:path: /]
 * h3 [:scheme: https]
 * h3 [:authority: quic.aiortc.org]
-* h3 [user-agent: curl/7.73.0-DEV]
+* h3 [user-agent: curl/7.73.0]
 * h3 [accept: */*]
 * h3 [alt-used: quic.aiortc.org:443]
-* Using HTTP/3 Stream ID: 0 (easy handle 0x7fba6d815600)
+* Using HTTP/3 Stream ID: 0 (easy handle 0x7f8fdc813e00)
 > HEAD / HTTP/3
 > Host: quic.aiortc.org
-> user-agent: curl/7.73.0-DEV
+> user-agent: curl/7.73.0
 > accept: */*
 > alt-used: quic.aiortc.org:443
 > 
@@ -109,8 +109,8 @@ curl/build/src/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
 HTTP/3 200
 < server: aioquic/0.9.7
 server: aioquic/0.9.7
-< date: Tue, 01 Dec 2020 09:18:06 GMT
-date: Tue, 01 Dec 2020 09:18:06 GMT
+< date: Wed, 02 Dec 2020 07:26:39 GMT
+date: Wed, 02 Dec 2020 07:26:39 GMT
 < content-length: 1068
 content-length: 1068
 < content-type: text/html; charset=utf-8

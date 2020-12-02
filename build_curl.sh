@@ -8,6 +8,8 @@ fi
 
 cd curl
 
+./maketgz 7.73.0 only
+
 if [ -d build ];then
   rm -rf build
 fi
