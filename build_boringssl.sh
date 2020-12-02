@@ -17,13 +17,21 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
       -G Ninja  ..
 
-ninja && cd ..
+ninja
+
+# for building quiche with boringssl: QUICHE_BSSL_PATH=../boringssl
+ln -s crypto/libcrypto.a libcrypto.a
+ln -s ssl/libssl.a libssl.a
+
+cd ..
 
 if [ -d lib ];then
   rm -rf lib
 fi
 
-mkdir lib
+mkdir lib && cd lib
 
-cp build/crypto/libcrypto.a lib/libcrypto.a
-cp build/ssl/libssl.a lib/libssl.a
+ln -s ../build/crypto/libcrypto.a libcrypto.a
+ln -s ../build/ssl/libssl.a libssl.a
+
+cd ..
