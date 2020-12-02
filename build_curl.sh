@@ -16,16 +16,16 @@ mkdir build && cd build
 
 LDFLAGS="-framework Security" \
 cmake -DCMAKE_USE_OPENSSL=YES \
-      -DOPENSSL_ROOT_DIR="${PWD}/../../boringssl" \
+      -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
       -DUSE_NGHTTP2=YES \
       -DNGHTTP2_INCLUDE_DIR="${PWD}/../../nghttp2/libnghttp2/include" \
       -DNGHTTP2_LIBRARY="${PWD}/../../nghttp2/libnghttp2/lib/libnghttp2.a" \
-      -DUSE_QUICHE=YES \
-      -DQUICHE_INCLUDE_DIR="${PWD}/../../quiche/include" \
-      -DQUICHE_LIBRARY="${PWD}/../../quiche/target/x86_64-apple-darwin/release/libquiche.a" \
       -DCURL_ZLIB=YES \
       -DZLIB_INCLUDE_DIR="${PWD}/../../zlib/libz/include" \
       -DZLIB_LIBRARY="${PWD}/../../zlib/libz/lib/libz.a" \
+      -DUSE_LIBSSH2=YES \
+      -DLIBSSH2_INCLUDE_DIR="${PWD}/../../libssh2/include" \
+      -DLIBSSH2_LIBRARY="${PWD}/../../libssh2/lib/libssh2.a" \
       -DENABLE_ALT_SVC=YES \
       -DBUILD_SHARED_LIBS=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \

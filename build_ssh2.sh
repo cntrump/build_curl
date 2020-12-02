@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+set -e
+
+if [ ! -d libssh2 ];then
+  git clone -b libssh2-1.9.0 --depth=1 https://github.com/libssh2/libssh2.git
+fi
+
+cd libssh2
+
+if [ -d build ];then
+  rm -rf build
+fi
+
+mkdir build && cd build
+
+cmake -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
+      -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
+      -G Ninja  ..
+
+ninja && cd ..
+
+if [ -d lib ];then
+  rm -rf lib
+fi
+
+mkdir lib && cd lib
+
+ln -s ../build/src/libssh2.a libssh2.a
