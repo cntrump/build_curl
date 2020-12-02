@@ -16,13 +16,16 @@ mkdir build && cd build
 
 LDFLAGS="-framework Security" \
 cmake -DCMAKE_USE_OPENSSL=YES \
-      -DOPENSSL_ROOT_DIR=../boringssl \
+      -DOPENSSL_ROOT_DIR="${PWD}/../../boringssl" \
       -DUSE_NGHTTP2=YES \
-      -DNGHTTP2_INCLUDE_DIR=../../nghttp2/libnghttp2/include \
-      -DNGHTTP2_LIBRARY=../../nghttp2/libnghttp2/lib/libnghttp2.a \
+      -DNGHTTP2_INCLUDE_DIR="${PWD}/../../nghttp2/libnghttp2/include" \
+      -DNGHTTP2_LIBRARY="${PWD}/../../nghttp2/libnghttp2/lib/libnghttp2.a" \
       -DUSE_QUICHE=YES \
-      -DQUICHE_INCLUDE_DIR=../../quiche/include \
-      -DQUICHE_LIBRARY=../../quiche/target/x86_64-apple-darwin/release/libquiche.a \
+      -DQUICHE_INCLUDE_DIR="${PWD}/../../quiche/include" \
+      -DQUICHE_LIBRARY="${PWD}/../../quiche/target/x86_64-apple-darwin/release/libquiche.a" \
+      -DCURL_ZLIB=YES \
+      -DZLIB_INCLUDE_DIR="${PWD}/../../zlib/libz/include" \
+      -DZLIB_LIBRARY="${PWD}/../../zlib/libz/lib/libz.a" \
       -DENABLE_ALT_SVC=YES \
       -DBUILD_SHARED_LIBS=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
