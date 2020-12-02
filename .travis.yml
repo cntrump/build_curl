@@ -4,6 +4,9 @@ addons:
     packages:
       - rust
       - zsh
+      - cmake
+      - ninja
+      - automake
     update: true
 install: skip
 branches:
