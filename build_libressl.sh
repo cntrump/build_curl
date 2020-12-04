@@ -4,9 +4,10 @@ set -e
 
 if [ ! -d libressl ];then
   git clone -b v3.3.0 --depth=1 https://github.com/libressl-portable/portable.git libressl
+  cd libressl && ./autogen.sh
+else
+  cd libressl
 fi
-
-cd libressl && ./autogen.sh
 
 if [ -d build ];then
   rm -rf build

@@ -2,11 +2,14 @@
 
 set -e
 
-if [ ! -d libssh2 ];then
-  git clone -b libssh2-1.9.0 --depth=1 https://github.com/libssh2/libssh2.git
+if [ ! -d ssh2 ];then
+  git clone -b libssh2-1.9.0 --depth=1 https://github.com/libssh2/libssh2.git ssh2
 fi
 
-cd libssh2
+cd ssh2
+
+sed -i "" "s/sed -i /sed -i.bak /g" ./maketgz
+./maketgz 1.9.0 only
 
 if [ -d build ];then
   rm -rf build

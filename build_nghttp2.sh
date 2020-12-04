@@ -14,6 +14,9 @@ mkdir build && cd build
 
 cmake -DENABLE_LIB_ONLY=YES \
       -DENABLE_STATIC_LIB=YES \
+      -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
+      -DZLIB_INCLUDE_DIR="${PWD}/../../zlib/libz/include" \
+      -DZLIB_LIBRARY="${PWD}/../../zlib/libz/lib/libz.a" \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
       -G Ninja  ..
 
