@@ -4,10 +4,10 @@
 - [x] HTTP/2 (using [nghttp2](https://github.com/nghttp2/nghttp2))
 - [x] HTTP/3 (using [quiche](https://github.com/cloudflare/quiche))
 
-Install `rust` (for building quiche using cargo)
+Install `rust` (for building `quiche` using cargo) and `go` (for building `boringssl`)
 
 ```
-brew install rust
+brew install rust go
 ```
 
 Install `cmake`, `ninja` for building sources
