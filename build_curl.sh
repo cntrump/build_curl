@@ -16,7 +16,7 @@ fi
 
 mkdir build && cd build
 
-LDFLAGS="-lldap -lsasl2" \
+LDFLAGS="-lldap -lsasl2 -flto -dead_strip" \
 cmake -DCMAKE_USE_OPENSSL=YES \
       -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
       -DUSE_NGHTTP2=YES \
@@ -25,6 +25,9 @@ cmake -DCMAKE_USE_OPENSSL=YES \
       -DCURL_ZLIB=YES \
       -DZLIB_INCLUDE_DIR="${PWD}/../../zlib/libz/include" \
       -DZLIB_LIBRARY="${PWD}/../../zlib/libz/lib/libz.a" \
+      -DCURL_ZSTD=YES \
+      -DZstd_INCLUDE_DIR="${PWD}/../../zstd/libzstd/include" \
+      -DZstd_LIBRARY="${PWD}/../../zstd/libzstd/lib/libzstd.a" \
       -DUSE_LIBSSH2=YES \
       -DLIBSSH2_INCLUDE_DIR="${PWD}/../../ssh2/include" \
       -DLIBSSH2_LIBRARY="${PWD}/../../ssh2/lib/libssh2.a" \
