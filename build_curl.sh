@@ -34,6 +34,16 @@ cmake -DCMAKE_USE_OPENSSL=YES \
       -DENABLE_ALT_SVC=YES \
       -DBUILD_SHARED_LIBS=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
+      -DCMAKE_INSTALL_PREFIX="${PWD}/../../opt" \
       -G Ninja ..
 
-ninja && cd ..
+ninja
+
+if [ -d "../../opt" ];then
+  rm -rf opt
+fi
+
+ninja install
+
+cd ../..
+opt/bin/curl -V
