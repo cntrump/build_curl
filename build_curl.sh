@@ -16,7 +16,7 @@ fi
 
 mkdir build && cd build
 
-LDFLAGS="-framework Security" \
+LDFLAGS="-framework Security -flto -dead_strip" \
 cmake -DCMAKE_USE_OPENSSL=YES \
       -DOPENSSL_ROOT_DIR="${PWD}/../../boringssl" \
       -DUSE_NGHTTP2=YES \
