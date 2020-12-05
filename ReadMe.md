@@ -129,9 +129,6 @@ https://bagder.github.io/HTTP3-test/
 
 ```
 brew tap cntrump/curlx
-```
-
-```
 brew install curlx
 ```
 
