@@ -14,7 +14,7 @@ mkdir build && cd build
 
 cmake -DENABLE_LIB_ONLY=YES \
       -DENABLE_STATIC_LIB=YES \
-      -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
+      -DOPENSSL_ROOT_DIR="${PWD}/../../libressl/opt" \
       -DOPENSSL_USE_STATIC_LIBS=YES \
       -DZLIB_INCLUDE_DIR="${PWD}/../../zlib/libz/include" \
       -DZLIB_LIBRARY="${PWD}/../../zlib/libz/lib/libz.a" \

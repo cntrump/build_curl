@@ -17,7 +17,7 @@ fi
 
 mkdir build && cd build
 
-cmake -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
+cmake -DOPENSSL_ROOT_DIR="${PWD}/../../libressl/opt" \
       -DBUILD_EXAMPLES=NO -DBUILD_TESTING=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
       -G Ninja  ..

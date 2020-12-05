@@ -9,7 +9,7 @@ fi
 cd openldap
 
 export MACOSX_DEPLOYMENT_TARGET=10.9
-export OPENSSL_ROOT_DIR="${PWD}/../libressl"
+export OPENSSL_ROOT_DIR="${PWD}/../libressl/opt"
 
 export CC=clang
 export CXX=clang++

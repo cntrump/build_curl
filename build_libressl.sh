@@ -15,25 +15,15 @@ fi
 
 mkdir build && cd build
 
-cmake -DLIBRESSL_SKIP_INSTALL=YES -DLIBRESSL_APPS=NO -DLIBRESSL_TESTS=NO \
+cmake -DLIBRESSL_APPS=NO -DLIBRESSL_TESTS=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
+      -DCMAKE_INSTALL_PREFIX="${PWD}/../opt" \
       -G Ninja  ..
 
 ninja
 
-# for building quiche with boringssl: QUICHE_BSSL_PATH=../boringssl
-ln -s crypto/libcrypto.a libcrypto.a
-ln -s ssl/libssl.a libssl.a
-
-cd ..
-
-if [ -d lib ];then
-  rm -rf lib
+if [ -d "../opt" ];then
+  rm -rf "../opt"
 fi
 
-mkdir lib && cd lib
-
-ln -s ../build/crypto/libcrypto.a libcrypto.a
-ln -s ../build/ssl/libssl.a libssl.a
-
-cd ..
+ninja install
