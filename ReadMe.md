@@ -124,3 +124,19 @@ content-type: text/html; charset=utf-8
 More HTTP/3 test servers: 
 
 https://bagder.github.io/HTTP3-test/
+
+## Install
+
+```
+brew tap cntrump/curlx
+```
+
+```
+brew install curlx
+```
+
+Test
+
+```
+curlx -V
+```
