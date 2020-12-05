@@ -3,6 +3,7 @@ osx_image: xcode12.2
 addons:
   homebrew:
     packages:
+      - rustup
       - go
       - zsh
       - cmake
@@ -12,7 +13,7 @@ addons:
       - libtool
     update: true
 before_install:
-  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh
+  - rustup-init -y
 install: skip
 branches:
   only:
