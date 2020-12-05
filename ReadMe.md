@@ -129,7 +129,7 @@ https://bagder.github.io/HTTP3-test/
 
 ```
 brew tap cntrump/brew
-brew install --cask curlx
+brew install curlx
 ```
 
 Test
