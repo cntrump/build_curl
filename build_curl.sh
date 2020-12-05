@@ -9,6 +9,7 @@ fi
 cd curl && ./maketgz 7.73.0 only
 
 sed -i "" "s/static CURLcode ldap_connect(/static CURLcode ldap_connect_s(/g" lib/openldap.c
+sed -i "" "s/ldap_connect,/ldap_connect_s,/g" lib/openldap.c
 
 if [ -d build ];then
   rm -rf build
