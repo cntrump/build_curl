@@ -44,7 +44,7 @@ cmake -DCMAKE_USE_OPENSSL=YES \
 ninja
 
 if [ -d "../../opt" ];then
-  rm -rf opt
+  rm -rf "../../opt"
 fi
 
 ninja install
