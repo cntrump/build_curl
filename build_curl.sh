@@ -19,6 +19,7 @@ mkdir build && cd build
 LDFLAGS="-framework Security -flto -dead_strip" \
 cmake -DCMAKE_USE_OPENSSL=YES \
       -DOPENSSL_ROOT_DIR="${PWD}/../../boringssl" \
+      -DOPENSSL_USE_STATIC_LIBS=YES \
       -DUSE_NGHTTP2=YES \
       -DNGHTTP2_INCLUDE_DIR="${PWD}/../../nghttp2/libnghttp2/include" \
       -DNGHTTP2_LIBRARY="${PWD}/../../nghttp2/libnghttp2/lib/libnghttp2.a" \
