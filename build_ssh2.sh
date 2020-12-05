@@ -8,7 +8,7 @@ fi
 
 cd ssh2
 
-sed -i "" "s/sed -i /sed -i.bak /g" ./maketgz
+sed -i "" "s/sed -i /sed -i\"\" /g" ./maketgz
 ./maketgz 1.9.0 only
 
 if [ -d build ];then
@@ -18,6 +18,7 @@ fi
 mkdir build && cd build
 
 cmake -DOPENSSL_ROOT_DIR="${PWD}/../../libressl" \
+      -DBUILD_EXAMPLES=NO -DBUILD_TESTING=NO \
       -DCMAKE_OSX_SYSROOT=macosx -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 \
       -G Ninja  ..
 
