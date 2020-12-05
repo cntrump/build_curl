@@ -11,6 +11,8 @@ addons:
       - automake
       - libtool
     update: true
+before_install:
+  - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh
 install: skip
 branches:
   only:
