@@ -4,11 +4,11 @@ addons:
   homebrew:
     packages:
       - go
-      - rust
       - zsh
       - cmake
       - ninja
       - automake
+      - autoconf
       - libtool
     update: true
 before_install:
