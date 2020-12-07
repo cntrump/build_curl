@@ -51,6 +51,7 @@ fi
 
 ninja install
 
+rm -f "../../opt/bin/curl-config"
 rm -rf "../../opt/lib/cmake"
 rm -rf "../../opt/lib/pkgconfig"
 
