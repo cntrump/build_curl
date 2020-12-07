@@ -23,7 +23,7 @@ Run `build.sh`
 ## Testing
 
 ```
-curl/build/src/curl -V
+opt/bin/curl -V
 ```
 
 output
@@ -38,7 +38,7 @@ Features: alt-svc AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL
 Test `HTTP/1.1`:
 
 ```
-curl/build/src/curl --http1.1 -I https://quic.aiortc.org/
+opt/bin/curl --http1.1 -I https://quic.aiortc.org/
 ```
 
 ```
@@ -54,7 +54,7 @@ Alt-Svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 Test `HTTP/2`:
 
 ```
-curl/build/src/curl --http2 -I https://quic.aiortc.org/
+opt/bin/curl --http2 -I https://quic.aiortc.org/
 ```
 
 ```
@@ -69,7 +69,7 @@ alt-svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 Test `HTTP/3`:
 
 ```
-curl/build/src/curl --http3 -I https://quic.aiortc.org/
+opt/bin/curl --http3 -I https://quic.aiortc.org/
 ```
 
 ```
@@ -83,7 +83,7 @@ content-type: text/html; charset=utf-8
 Upgrade via `Alt-Svc`:
 
 ```
-curl/build/src/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
+opt/bin/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
 ```
 
 ```
@@ -124,3 +124,16 @@ content-type: text/html; charset=utf-8
 More HTTP/3 test servers: 
 
 https://bagder.github.io/HTTP3-test/
+
+## Install
+
+```
+brew tap cntrump/brew
+brew install curlx
+```
+
+Test
+
+```
+curlx -V
+```
