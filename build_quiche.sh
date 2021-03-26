@@ -15,6 +15,6 @@ fi
 export MACOSX_DEPLOYMENT_TARGET=10.9
 
 QUICHE_BSSL_PATH="${PWD}/../boringssl" \
-cargo build --target=x86_64-apple-darwin --lib --release --features pkg-config-meta,qlog --verbose
+cargo build --target=x86_64-apple-darwin --lib --release --features ffi,pkg-config-meta,qlog --verbose
 
 cd ..
