@@ -3,7 +3,7 @@
 set -e
 
 if [ ! -d quiche ];then
-  git clone -b 0.6.0 --depth=1 https://github.com/cloudflare/quiche
+  git clone -b 0.7.0 --depth=1 https://github.com/cloudflare/quiche
 fi
 
 cd quiche
