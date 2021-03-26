@@ -3,7 +3,7 @@
 set -e
 
 if [ ! -d nghttp2 ]; then
-  git clone -b v1.42.0 --depth=1 https://github.com/nghttp2/nghttp2.git
+  git clone -b v1.43.0 --depth=1 https://github.com/nghttp2/nghttp2.git
 fi
 
 cd nghttp2
