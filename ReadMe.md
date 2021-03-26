@@ -10,6 +10,13 @@ Install `rust` (for building `quiche` using cargo) and `go` (for building `borin
 brew install rust go
 ```
 
+Or Install `rust` via `rustup-init` (recommend): 
+
+```
+brew install rustup-init
+rustup-init -y # install default toolchain
+```
+
 Install `cmake`, `ninja` for building sources
 
 ```
