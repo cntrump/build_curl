@@ -3,7 +3,7 @@
 set -e
 
 if [ ! -d zstd ];then
-  git clone -b v1.4.5 --depth=1 https://github.com/facebook/zstd.git
+  git clone -b v1.4.9 --depth=1 https://github.com/facebook/zstd.git
 fi
 
 cd zstd/build/cmake
