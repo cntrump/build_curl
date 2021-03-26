@@ -3,12 +3,12 @@
 set -e
 
 if [ ! -d curl ];then
-  git clone -b curl-7_73_0 --depth=1 https://github.com/curl/curl.git
+  git clone -b curl-7_75_0 --depth=1 https://github.com/curl/curl.git
 fi
 
 cd curl
 
-./maketgz 7.73.0 only
+./maketgz 7.75.0 only
 
 if [ -d build ];then
   rm -rf build
