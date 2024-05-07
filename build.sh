@@ -1,15 +1,8 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 set -e
 
-export CC="clang"
-export CXX="clang++"
-export CFLAGS="-flto"
-export CXXFLAGS="${CFLAGS}"
-
-./build_zlib.sh
-./build_zstd.sh
-./build_boringssl.sh
-./build_nghttp2.sh
-./build_quiche.sh
-./build_curl.sh
+source ./build-openssl.sh
+source ./build-zlib.sh
+source ./build-nghttp3.sh
+source ./build-curl.sh

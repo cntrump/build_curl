@@ -1,27 +1,8 @@
-# Build cUrl for macOS [![Build Status](https://travis-ci.com/cntrump/build_curl.svg?branch=main)](https://travis-ci.com/cntrump/build_curl)
+# Build cURL for macOS
 
-- [x] HTTPS  (using [boringSSL](https://github.com/google/boringssl))
-- [x] HTTP/2 (using [nghttp2](https://github.com/nghttp2/nghttp2))
-- [x] HTTP/3 (using [quiche](https://github.com/cloudflare/quiche))
-
-Install `rust` (for building `quiche` using cargo) and `go` (for building `boringssl`)
-
-```
-brew install rust go
-```
-
-Or Install `rust` via `rustup-init` (recommend): 
-
-```
-brew install rustup-init
-rustup-init -y # install default toolchain
-```
-
-Install `cmake`, `ninja` for building sources
-
-```
-brew install cmake ninja
-```
+- [x] OpenSSL 3.3.0
+- [x] ngHTTP3 1.2.0
+- [x] zlib 1.3.1
 
 ## Building
 
@@ -30,25 +11,19 @@ Run `build.sh`
 ## Testing
 
 ```
-opt/bin/curl -V
-```
+$ ./macosx/bin/curl -V
 
-output
-
-```
-curl 7.73.0 (Darwin) libcurl/7.73.0 BoringSSL zlib/1.2.11 zstd/1.4.5 libssh2/1.9.0 nghttp2/1.42.0 quiche/0.6.0
-Release-Date: 2020-12-02
-Protocols: dict file ftp ftps gopher http https imap imaps ldap mqtt pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp 
-Features: alt-svc AsynchDNS HTTP2 HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL UnixSockets zstd
+curl 8.7.1 (apple-macosx10.9) libcurl/8.7.1 OpenSSL/3.3.0 zlib/1.3.1 nghttp3/1.2.0
+Release-Date: 2024-05-07
+Protocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns mqtt pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
+Features: alt-svc AsynchDNS HSTS HTTP3 HTTPS-proxy IPv6 Largefile libz NTLM SSL threadsafe TLS-SRP UnixSockets
 ```
 
 Test `HTTP/1.1`:
 
 ```
-opt/bin/curl --http1.1 -I https://quic.aiortc.org/
-```
+$ ./macosx/bin/curl --http1.1 -I https://quic.aiortc.org/
 
-```
 HTTP/1.1 200 OK
 Server: nginx/1.14.2
 Date: Tue, 01 Dec 2020 07:22:46 GMT
@@ -61,10 +36,8 @@ Alt-Svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 Test `HTTP/2`:
 
 ```
-opt/bin/curl --http2 -I https://quic.aiortc.org/
-```
+$ ./macosx/bin/curl --http2 -I https://quic.aiortc.org/
 
-```
 HTTP/2 200 
 server: nginx/1.14.2
 date: Tue, 01 Dec 2020 07:23:11 GMT
@@ -76,10 +49,8 @@ alt-svc: h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400
 Test `HTTP/3`:
 
 ```
-opt/bin/curl --http3 -I https://quic.aiortc.org/
-```
+$ ./macosx/bin/curl --http3 -I https://quic.aiortc.org/
 
-```
 HTTP/3 200
 server: aioquic/0.9.7
 date: Tue, 01 Dec 2020 07:23:33 GMT
@@ -90,10 +61,8 @@ content-type: text/html; charset=utf-8
 Upgrade via `Alt-Svc`:
 
 ```
-opt/bin/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
-```
+$ ./macosx/bin/curl -I -v --alt-svc altsvc.cache https://quic.aiortc.org
 
-```
 * Alt-svc connecting from [h2]quic.aiortc.org:443 to [h3-29]quic.aiortc.org:443
 *   Trying 34.247.69.99:443...
 * Sent QUIC client Initial, ALPN: h3-29,h3-28,h3-27
