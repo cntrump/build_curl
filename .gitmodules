@@ -1,3 +1,6 @@
 [submodule "toolchain"]
 	path = toolchain
 	url = https://github.com/cntrump/cmake-xcrun-toolchain.git
+[submodule "openssl-apple"]
+	path = openssl-apple
+	url = https://github.com/cntrump/OpenSSL-xcframework.git
