@@ -18,7 +18,6 @@ cmake -S nghttp3 -B build -G Ninja -DCMAKE_TOOLCHAIN_FILE=$(pwd)/toolchain/xcrun
         -DCMAKE_OSX_TRIPLE_OS=macosx \
         -DCMAKE_OSX_TRIPLE_OS_VERSION=10.9 \
         -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" \
-        -DCMAKE_CLANG_DEFINES_MODULE=ON -DCMAKE_CLANG_PRODUCT_MODULE_NAME="nghttp3" \
         -DENABLE_LIB_ONLY=ON \
         -DENABLE_SHARED_LIB=OFF \
         -DENABLE_STATIC_LIB=ON
