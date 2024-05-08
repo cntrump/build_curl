@@ -1,8 +1,11 @@
 # Build cURL for macOS
 
+Static linking of all third-party libraries:
+
 - [x] OpenSSL 3.3.0
 - [x] ngHTTP3 1.2.0
 - [x] zlib 1.3.1
+- [x] zstd 1.5.6
 
 ## Building
 
